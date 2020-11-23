@@ -1,4 +1,4 @@
-package com.qa.main;
+package com.qa.main.utils;
 
 import java.util.Scanner;
 
@@ -48,4 +48,11 @@ public class Utils {
 		} while (doubleInput == null);
 		return doubleInput;
 	}
+	
+	/*
+	 * public int getInt() { String input = getString(); int intInput = 0; do { try
+	 * { intInput = String.parseInt(input); } catch (NumberFormatException nfe) {
+	 * LOGGER.info("Error - Please enter a number"); } } while (intInput == 0);
+	 * return intInput; }
+	 */
 }
