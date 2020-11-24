@@ -42,8 +42,7 @@ public class ItemController implements CrudController<Items> {
 		LOGGER.info("Please enter an item name");
 		String name = utils.getString();
 		LOGGER.info("Please enter a quantity");
-		int quantity = scan.nextInt();
-		scan.nextLine();
+		Long quantity = utils.getLong();
 		LOGGER.info("Please enter a price");
 		Double price = utils.getDouble();
 		Items items = getItemDAO().create(new Items(name, quantity, price));
@@ -58,8 +57,7 @@ public class ItemController implements CrudController<Items> {
 		LOGGER.info("Please enter the name of the item");
 		String name = utils.getString();
 		LOGGER.info("Please enter the quantity of the item");
-		int quantity = scan.nextInt();
-		scan.nextLine();
+		Long quantity = utils.getLong();
 		LOGGER.info("Please enter the price of this item");
 		Long price = utils.getLong();
 		Items items = itemDAO.update(new Items(id, name, quantity, price));

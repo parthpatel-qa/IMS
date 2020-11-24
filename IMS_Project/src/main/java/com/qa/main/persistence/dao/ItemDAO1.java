@@ -105,7 +105,7 @@ public class ItemDAO1 implements DAO<Items>{
 	public Items modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long Item_id = resultSet.getLong("ID");
 		String item = resultSet.getString("Item name");
-		int Quantity = resultSet.getInt("Quantity");
+		Long Quantity = resultSet.getLong("Quantity");
 		Double Price = resultSet.getDouble("Quantity");
 		return new Items(Item_id, item, Quantity, Price);
 	}

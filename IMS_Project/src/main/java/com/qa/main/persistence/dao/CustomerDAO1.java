@@ -65,7 +65,7 @@ public class CustomerDAO1 implements DAO<Customer>{
 	public Customer readCustomer(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM customers where customer_ID = " + id);) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM Customers where customer_ID = " + id);) {
 			resultSet.next();
 			return modelFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -78,7 +78,7 @@ public class CustomerDAO1 implements DAO<Customer>{
 	public Customer update(Customer customer) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("update customers set customer_name ='" + customer.getCustomer_name() + "', email ='"
+			statement.executeUpdate("update Customers set customer_name ='" + customer.getCustomer_name() + "', email ='"
 					+ customer.getEmail() +  "', password ='"
 							+ customer.getPassword() + "' where id =" + customer.getCustomer_ID());
 					

@@ -1,5 +1,8 @@
 package com.qa.main.utils;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
@@ -20,9 +23,10 @@ public class Utils {
 	}
 
 	public Long getLong() {
-		String input = getString();
+		
 		Long longInput = null;
 		do {
+			String input = getString();
 			try {
 				longInput = Long.parseLong(input);
 			} catch (NumberFormatException nfe) {
@@ -37,9 +41,10 @@ public class Utils {
 	}
 
 	public Double getDouble() {
-		String input = getString();
+		
 		Double doubleInput = null;
 		do {
+			String input = getString();
 			try {
 				doubleInput = Double.parseDouble(input);
 			} catch (NumberFormatException nfe) {
@@ -48,6 +53,27 @@ public class Utils {
 		} while (doubleInput == null);
 		return doubleInput;
 	}
+	
+	public Date getDate() {
+		
+		String sDate1 = "1996-04-04";
+		Date dateInput = null;
+		do{
+			String input = getString();
+			try {
+		
+			dateInput = (Date) new SimpleDateFormat("YYYY-MM-DD").parse(input);
+		} catch (ParseException e) {
+			LOGGER.info("Error - Please enter the date in the correct format");
+			e.printStackTrace();
+		}
+		}while (dateInput == null);
+		return dateInput;
+		
+		
+	}
+
+
 	
 	/*
 	 * public int getInt() { String input = getString(); int intInput = 0; do { try

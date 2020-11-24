@@ -4,12 +4,12 @@ public class Items {
 	
 	private Long Item_id;
 	private String item;
-	private int Quantity;
+	private Long Quantity;
 	private double Price;
 	
 	//constructors
 	
-	public Items(String item_name, int quantity, double price) {
+	public Items(String item_name, Long quantity, double price) {
 		super();
 		item = item_name;
 		Quantity = quantity;
@@ -18,7 +18,7 @@ public class Items {
 
 
 
-	public Items(Long item_id, String item_name, int quantity, double price) {
+	public Items(Long item_id, String item_name, Long quantity, double price) {
 		super();
 		Item_id = item_id;
 		item = item_name;
@@ -53,13 +53,13 @@ public class Items {
 
 
 
-	public int getQuantity() {
+	public Long getQuantity() {
 		return Quantity;
 	}
 
 
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(Long quantity) {
 		Quantity = quantity;
 	}
 
